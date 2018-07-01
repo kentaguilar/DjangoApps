@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block header %}
+<h1>{{ post.title }}</h1>
+<hr width="500" align="left" size="4">
+{% endblock %}
+
+{% block content %}
+<h3>{{ post.text }}</h3>
+<br>
+<div class="comments">
+    
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
