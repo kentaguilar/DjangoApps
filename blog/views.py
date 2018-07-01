@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.http import Http404
 from .models import Post,Comment
 from datetime import datetime
-# from .forms import CommentForm
+from .forms import CommentForm
 
 # Create your views here.
 def index(request):
@@ -19,7 +19,7 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     c_number = len(Comment.objects.filter(post_id=pk))
-    return render(request, '/blog/post_detail.html', {'post':post, 'c_number':c_number})
+    return render(request, 'blog/post_detail.html', {'post':post, 'c_number':c_number})
 
 def post_comment(request, pk):
     comments = Comment.objects.filter(post_id=pk)
